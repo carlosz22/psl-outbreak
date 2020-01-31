@@ -1,2 +1,1 @@
-web: gunicorn app:psl-outbreak
-
+web: gunicorn web_flask:app
