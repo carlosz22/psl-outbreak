@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!-- jumbotron -->
+<div class="jumbotron jumbotron-fluid bg-light text-gray pb-4">
+    <div class="container text-sm-center pt-4">
+        <h1 class="display-5">Tusavirus Outbreak</h1>
+    </div>
+</div>
+</div><!-- /jumbotron -->
+
+<div class="container pt-4">
+    <div class="row">
+        <div class="col">
+            <h3 class="mb-4">Report</h3>
+            <p>
+
+                The Centers for Disease Control and Prevention (CDC) is closely monitoring an outbreak of
+                respiratory illness caused by a novel (new) coronavirus first identified in Wuhan, Hubei Province,
+                China. Chinese authorities identified the new coronavirus, which has resulted in thousands of
+                confirmed cases in China, including cases outside Wuhan City. Additional cases have been identified
+                in a growing number of other international locations, including the United States. There are ongoing
+                investigations to learn more.</p>
+            <h1 id="schedule" class="display-6 text-center my-5 text-muted">Report cases</h1>
+            <form>
+                <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>Hurry!</strong> Early bird registration ends in two days.
+                </div>
+                <h5 class="mb-4">Basic Info</h5>
+                <div class="form-group">
+                    <label for="role">Department:</label>
+                    <select class="custom-select form-control" id="role">
+                        {% for state in states.values() %}
+                        <option value="{{ state.id }}">{{ state.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="name">Number of infections:</label>
+                    <input type="text" class="form-control" id="name">
+                </div>
+
+                <hr class="mb-4">
+                <button type="submit" class="btn btn-outline-secondary btn-lg">Clear</button>
+                <button type="submit" class="btn btn-primary btn-lg">Save</button>
+            </form><!-- /registration form -->
+        </div>
+    </div>
+{% endblock %}

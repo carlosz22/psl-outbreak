@@ -1,132 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% block body %}
+<!-- title section -->
+<div class="jumbotron jumbotron-fluid bg-light text-gray">
+    <div class="container text-sm-center pt-5">
+        <h1 class="display-3">Tusavirus Outbreak</h1>
+        <p class="lead">Situation about the Tusavirus outbreak (TuV-2020) in Colombia</p>
+    </div>
+</div>
+</div><!-- /title section -->
+<!-- main container -->
+<div class="container pt-4">
+    <div class="row">
+        <div class="col-lg-7">
+            <h3 class="mb-4">Situation Summary</h3>
+            <p>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/custom.css') }}">
-
-    <title>Tusavirus Outbreak - Ministry of Health</title>
-</head>
-
-<body class="">
-    <!-- navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-orange fixed-top">
-        <div class="container">
-            <a class="navbar-brand order-1 mr-0" href="/" target="_blank">TuV Outbreak</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="/data">Data</a>
-                    <a class="nav-item nav-link" href="/report">Report</a>
+                The Centers for Disease Control and Prevention (CDC) is closely monitoring an outbreak of
+                respiratory illness caused by a novel (new) coronavirus first identified in Wuhan, Hubei Province,
+                China. Chinese authorities identified the new coronavirus, which has resulted in thousands of
+                confirmed cases in China, including cases outside Wuhan City. Additional cases have been identified
+                in a growing number of other international locations, including the United States. There are ongoing
+                investigations to learn more.</p>
+            <div class="card mt-4">
+                <h5 class="card-header">Outbreak summary</h5>
+                <div class="card-body">
+                    <p class="card-text">930 cases confirmed and 16 deaths.</p>
+                    <p class="card-text">Last report: Feb 1, 2020 7:34</p>
+                    <a href="/data" class="btn btn-primary">Find out more</a>
+                    <a href="/report" class="btn btn-secondary">Report cases</a>
                 </div>
             </div>
         </div>
-    </nav><!-- /navbar -->
-    <!-- jumbotron -->
-    <div class="jumbotron jumbotron-fluid bg-light text-gray">
-        <div class="container text-sm-center pt-5">
-            <h1 class="display-3">Tusavirus Outbreak</h1>
-            <p class="lead">Situation about the Tusavirus outbreak (TuV-2020) in Colombia</p>
+        <div class="col-lg">
+            <h3 class="mb-4">News</h3>
+            <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action"><strong>MongoDB</strong>: NoSQL
+                    database</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong>Express</strong>: Framework for
+                    Node</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong>React</strong>: JavaScript
+                    library</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong>Node.js</strong>: JavaScript
+                    environment</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong>ES2015</strong>: Latest version
+                    of JavaScript</a>
+                <a href="#" class="list-group-item list-group-item-action"><strong>Babel</strong>: JavaScript
+                    compiler</a>
+            </div>
         </div>
     </div>
-    </div><!-- /jumbotron -->
-
-    <div class="container pt-4">
-        <div class="row">
-            <div class="col-lg-7">
-                <h3 class="mb-4">Situation Summary</h3>
-                <p>
-
-                    The Centers for Disease Control and Prevention (CDC) is closely monitoring an outbreak of
-                    respiratory illness caused by a novel (new) coronavirus first identified in Wuhan, Hubei Province,
-                    China. Chinese authorities identified the new coronavirus, which has resulted in thousands of
-                    confirmed cases in China, including cases outside Wuhan City. Additional cases have been identified
-                    in a growing number of other international locations, including the United States. There are ongoing
-                    investigations to learn more.</p>
-                <div class="card mt-4">
-                    <h5 class="card-header">Outbreak summary</h5>
-                    <div class="card-body">
-                        <p class="card-text">930 cases confirmed and 16 deaths.</p>
-                        <p class="card-text">Last report: Feb 1, 2020 7:34</p>
-                        <a href="#" class="btn btn-primary">Find out more</a>
-                        <a href="#" class="btn btn-secondary">Report cases</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg">
-                <h3 class="mb-4">News</h3>
-                <div class="list-group">
-                    <a href="#" class="list-group-item list-group-item-action"><strong>MongoDB</strong>: NoSQL
-                        database</a>
-                    <a href="#" class="list-group-item list-group-item-action"><strong>Express</strong>: Framework for
-                        Node</a>
-                    <a href="#" class="list-group-item list-group-item-action"><strong>React</strong>: JavaScript
-                        library</a>
-                    <a href="#" class="list-group-item list-group-item-action"><strong>Node.js</strong>: JavaScript
-                        environment</a>
-                    <a href="#" class="list-group-item list-group-item-action"><strong>ES2015</strong>: Latest version
-                        of JavaScript</a>
-                    <a href="#" class="list-group-item list-group-item-action"><strong>Babel</strong>: JavaScript
-                        compiler</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- footer -->
-        <div class="row py-3 my-3">
-            <div class="col-md-7">
-                <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Community</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Tracks</a>
-                    </li>
-                    <li class="nav-item">
-                        <div class="btn-group dropup">
-                            <button type="button" class="btn btn-outline-secondary">Other Confs</button>
-                            <button type="button"
-                                class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                            </button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">CSS Conf</a>
-                                <a class="dropdown-item" href="#">Python Conf</a>
-                                <a class="dropdown-item" href="#">Java Conf</a>
-                                <a class="dropdown-item" href="#">Swift Conf</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-            <div class="col-md text-md-right">
-                <small>&copy; 2017 Full Stack Conf &amp; Treehouse</small>
-            </div>
-        </div><!-- /footer -->
-    </div>
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
-</body>
-
-</html>
+{% endblock %}
