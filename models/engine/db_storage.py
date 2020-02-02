@@ -33,11 +33,8 @@ class DBStorage:
                                       format(MYSQL_USER,
                                              MYSQL_PWD,
                                              MYSQL_HOST,
-                                             MYSQL_DB))
-
-        #MYSQL_URL = getenv('CLEARDB_DATABASE_URL')
-        #self.__engine = create_engine('mysql+mysqldb://{}'.
-                                      #format(MYSQL_URL[7:]))
+                                             MYSQL_DB),
+                                      pool_pre_ping=True)
 
     def all(self, cls=None):
         """query on the current database session"""

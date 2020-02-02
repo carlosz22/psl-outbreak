@@ -1,3 +1,7 @@
 .bg-blue {
     background-color: #008dc9;
 }
+
+#success_alert #error_alert {
+    display: none;
+}
