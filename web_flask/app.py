@@ -24,6 +24,7 @@ def fetch_index():
         if report is not None and report.infections > 0:
             states_affected += 1
             total_infections += report.infections
+    storage.close()
     return render_template('index.html', total_states=total_states,
                            states_affected=states_affected,
                            total_infections=total_infections)
@@ -35,6 +36,7 @@ def show_states():
     objs = storage.all()
     for obj in objs.values():
         states_list.append(obj.to_dict())
+    storage.close()
     return jsonify({'states': states_list})
 
 
@@ -42,6 +44,7 @@ def show_states():
 @app.route('/report')
 def fetch_report():
     states = storage.all(State)
+    storage.close()
     return render_template("report.html", states=states)
 
 
@@ -63,6 +66,7 @@ def fetch_states_list():
             total_infections += report.infections
         states_list.append(state_dict)
         print(states_list)
+    storage.close()
     return render_template('data.html', states=states_list, total_infections=total_infections)
 
 
