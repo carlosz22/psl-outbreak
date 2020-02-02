@@ -25,9 +25,19 @@ class DBStorage:
     def __init__(self):
         """Instantiate a DBStorage object"""
 
-        MYSQL_URL = getenv('CLEARDB_DATABASE_URL')
-        self.__engine = create_engine('mysql+mysqldb://{}'.
-                                      format(MYSQL_URL[7:]))
+        MYSQL_USER = getenv('MYSQL_USER')
+        MYSQL_PWD = getenv('MYSQL_PWD')
+        MYSQL_HOST = getenv('MYSQL_HOST')
+        MYSQL_DB = getenv('MYSQL_DB')
+        self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
+                                      format(MYSQL_USER,
+                                             MYSQL_PWD,
+                                             MYSQL_HOST,
+                                             MYSQL_DB))
+
+        #MYSQL_URL = getenv('CLEARDB_DATABASE_URL')
+        #self.__engine = create_engine('mysql+mysqldb://{}'.
+                                      #format(MYSQL_URL[7:]))
 
     def all(self, cls=None):
         """query on the current database session"""
@@ -56,7 +66,7 @@ class DBStorage:
     def reload(self):
         """reloads data from the database"""
         Base.metadata.create_all(self.__engine)
-        sess_factory = sessionmaker(bind=self.engine, expire_on_commit=False)
+        sess_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(sess_factory)
         self.session = Session
 
