@@ -11,15 +11,12 @@ import models
 from models import storage
 
 
-department_list = ["Amazonas", "Antioquia", "Arauca", "Atlantico",
-                   "Bolivar", "Boyaca", "Caldas", "Caqueta", "Casanare",
-                   "Cauca", "Cesar", "Choco", "Cordoba", "Cundinamarca",
-                   "Guainia", "Guaviare", "Huila", "La Guajira",
-                   "Magdalena", "Meta", "Nariño", "Norte de Santander",
-                   "Putumayo", "Quindio", "Risaralda", "San Andres y Providencia",
-                   "Santander", "Sucre", "Tolima", "Valle del Cauca",
-                   "Vaupes", "Vichada"]
-for obj in department_list:
-    new_state = State(name=obj)
-    storage.new(new_state)
+
+
+first_state = storage.session.query(State).filter_by(name="Antioquia").first()
+new_report = Report(infections=12, state_id=first_state.id)
+print(new_report.to_dict())
+print(first_state.to_dict())
+storage.new(new_report)
 storage.save()
+print(first_state.reports)

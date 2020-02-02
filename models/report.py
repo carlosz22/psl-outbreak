@@ -11,7 +11,6 @@ class Report(BaseModel, Base):
     __tablename__ = 'reports'
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
     infections = Column(Integer, nullable=False)
-    deaths = Column(Integer, nullable=False)
 
     def __init__(self, *args, **kwargs):
         """initializes report"""

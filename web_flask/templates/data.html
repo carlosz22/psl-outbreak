@@ -24,18 +24,18 @@
       <h1 id="schedule" class="display-6 text-center my-5 text-muted">Infections by department</h1>
 
       <ul class="list-group">
-        {% for state in states.values() %}
+        {% for state in states %}
         <li class="list-group-item">
           <div class="d-flex justify-content-between">
-            <h3>{{ state.name }}</h3>
-            <h3><span class="badge badge-secondary">{{ state.id }}</span></h3>
+            <h3>{{ state['name'] }}</h3>
+            <h3><span class="badge badge-secondary">{{ state['infections'] }}</span></h3>
           </div>
         </li>
         {% endfor %}
         <li class="list-group-item list-group-item-info">
           <div class="d-flex justify-content-between">
             <h3>Total</h3>
-            <h3><span class="badge badge-secondary">1203</span></h3>
+            <h3><span class="badge badge-secondary">{{ total_infections }}</span></h3>
           </div>
       </ul><!-- /schedule -->
     </div>
