@@ -5,3 +5,12 @@
 #success_alert #error_alert {
     display: none;
 }
+
+.jumbotron {
+    background-image: url('../images/sick_woman_2_opaque.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: grey;
+}
+
