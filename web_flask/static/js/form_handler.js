@@ -2,8 +2,11 @@
 
 $(document).ready(function() {
 
-    $('form').on('submit', function(event) {
+    $('#clear').click(function() {
+        $('#number_infections').val('');
+    });
 
+    $('form').on('submit', function(event) {
             $.ajax({
                 data : {
                     state_id : $("#state_id").val(),
@@ -24,7 +27,9 @@ $(document).ready(function() {
                     $('#success_alert').text(data.success).show();
                     $('#error_alert').hide();
                 }
+                $('#number_infections').val('');
         });
             event.preventDefault();
     });
+
 });
