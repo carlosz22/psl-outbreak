@@ -1,12 +1,12 @@
 #!/usr/bin/python3
-""" Test cases for data page using Selenium and Chrome """
+""" Test cases for report page using Selenium and Chrome """
 
 import unittest
 from selenium import webdriver
 
 
-class TestDataChrome(unittest.TestCase):
-    """class TestDataChrome"""
+class TestReportChrome(unittest.TestCase):
+    """class TestReportChrome"""
 
     @classmethod
     def setUpClass(cls):
@@ -14,12 +14,12 @@ class TestDataChrome(unittest.TestCase):
         cls.driver = webdriver.Chrome()
         cls.driver.implicitly_wait(10)
 
-    def test_summary_data(self):
+    def test_send_correct_data(self):
         """Go to find out more on summary section"""
         self.driver.get('http://psl-outbreak.herokuapp.com')
         self.driver.find_element_by_id('summary_find_out').click()
 
-    def test_summary_report(self):
+    def test_send_inaccurate_data(self):
         """Go to report cases on summary section"""
         self.driver.get('http://psl-outbreak.herokuapp.com')
         self.driver.find_element_by_id('summary_report_cases').click()
