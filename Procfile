@@ -1,1 +1,1 @@
-web: gunicorn --workers=3 --preload web_flask.app:app -k gevent
+web: gunicorn --worker-class eventlet --preload web_flask.app:app
